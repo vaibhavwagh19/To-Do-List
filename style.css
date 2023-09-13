@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background:#ba8616 ;
+    padding: 10px;
+}
+
+.container .to-do{
+    width: 100%;
+    min-width: auto;
+    max-width: 900px;
+    height: auto;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 40px;
+    border-radius: 10px;
+    color: black;
+}
+.container .to-do h2 {
+    display: flex;
+    align-items: center;
+    margin: 0 0 25px 15px;
+    font-size: 32px;
+}
+.container .to-do hr{
+    width: auto;
+    max-width: 195px;
+    height: 7px;
+    border-radius: 2px;
+    margin: 0 0 15px 15px;
+    background: #ba8616;
+}
+
+.container .to-do .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef9;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.container .to-do .row input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.container .to-do .row button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ba8616;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 40px;
+    padding-right: 16px 50px;
+}
+.container .to-do .row button:hover{
+    background: #555555;
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+ul li{
+    list-style: none;
+    font-size: 21px;
+    font-style: italic;
+    padding: 12px 50px;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+    white-space: normal;
+    word-wrap: break-word;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url('images/unchecked.png');
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 8px;
+}
+ul li.checked{
+    color: #ff3434;
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    background-image: url('images/checked.png');
+}
+
+ul li span{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background:#ba8616;
+    color: #fff;
+
+    top: 50%; /* Adjust the top position to vertically center the button */
+    transform: translateY(-50%);
+}
+ul li span:hover{
+    background: #555;
+}
+
+
+@media (max-width:560px){
+    .container{
+        display: block;
+        background: none;
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
+    .container .to-do{
+        margin: 15px 0 15px;
+    }
+    .container .to-do .row {
+        flex-direction: column;
+        border-radius: 5px;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .container .to-do .row input {
+        width: 100%; /* Make the input field full width */
+        margin-bottom: 10px; /* Add some spacing between input and button */
+        padding: 10px 10px;
+        border: 0.1px solid #000;
+        border-radius: 5px;
+    }
+
+    .container .to-do .row button.add-btn {
+        width: 100%; 
+        padding: 12px 0; 
+        border-radius: 5px;
+    }
+}
+
